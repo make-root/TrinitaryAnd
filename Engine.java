@@ -36,7 +36,7 @@ public class Engine implements ActionListener {
        double Field6=0;
        
        if (!"".equals(FieldText1)){
-           Field1= (Double.parseDouble(FieldText1)/100);
+           Field1= Double.parseDouble(FieldText1);
         }
        if (!"".equals(FieldText2)){
            Field2= Double.parseDouble(FieldText2);
@@ -48,7 +48,7 @@ public class Engine implements ActionListener {
            Field4= Double.parseDouble(FieldText4);
         }
         if (!"".equals(FieldText5)){
-           Field5= Double.parseDouble(FieldText5)/100;
+           Field5= Double.parseDouble(FieldText5);
         }
         if (!"".equals(FieldText6)){
            Field6= Double.parseDouble(FieldText6);
@@ -56,17 +56,17 @@ public class Engine implements ActionListener {
         
 
         
-        double Cell1=Field1*Field4;
-        double Cell2=Field2*Field4;
-        double Cell3=Field3*Field4;
+        double Cell1=(Field1*Field4)*0.01;
+        double Cell2=(Field2*Field4)*0.01;
+        double Cell3=(Field3*Field4)*0.01;
 
-        double Cell4=Field1*Field5;
-        double Cell5=Field2*Field5;
-        double Cell6=Field3*Field5;
+        double Cell4=(Field1*Field5)*0.01;
+        double Cell5=(Field2*Field5)*0.01;
+        double Cell6=(Field3*Field5)*0.01;
 
-        double Cell7=Field1*Field6;
-        double Cell8=Field2*Field6;
-        double Cell9=Field3*Field6;
+        double Cell7=(Field1*Field6)*0.01;
+        double Cell8=(Field2*Field6)*0.01;
+        double Cell9=(Field3*Field6)*0.01;
 
         double Cell10=Cell1;
         double Cell11=Cell2+Cell4+Cell5;

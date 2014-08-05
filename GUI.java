@@ -188,22 +188,22 @@ public class GUI
             windowContent.add(LabelF8);//+
             windowContent.add(Label12);//+
   
-  //регистрация слушателя
-  Engine TAndEngine = new Engine(this);//создание класса движка
-  //и передача ему ссылки на себя (класс ГУИ)
-  calculate.addActionListener(TAndEngine);
+    //регистрация слушателя
+     Engine TAndEngine = new Engine(this);//создание класса движка
+    //и передача ему ссылки на себя (класс ГУИ)
+    calculate.addActionListener(TAndEngine);
       
      
-  // Создаём фрейм и задаём для него панель  
+    // Создаём фрейм и задаём для него панель
       JFrame frame = new JFrame("Trinitary AND"); 
       frame.setContentPane(windowContent); 
  
  
-  // задаём и размер и делаем фрейм видимым 
+    // задаём и размер и делаем фрейм видимым
       //frame.setSize(500,200); 
       frame.pack();
       frame.setVisible(true); 
-}
+    }
 
 
 
