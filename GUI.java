@@ -5,48 +5,20 @@ public class GUI
 {
     JPanel windowContent;
 
-    JLabel LabelSpace1;
-    JLabel LabelSpace2;
-    JLabel LabelSpace3;
-    JLabel LabelSpace4;
-    JLabel LabelSpace5;
-    JLabel LabelSpace6;
-    JLabel LabelSpace7;
-    JLabel LabelSpace8;
-    JLabel LabelSpace9;
-    JLabel LabelSpace10;
-
-    JLabel LabelT1;
-    JLabel LabelT2;
-    JLabel LabelT3;
-    JLabel LabelT4;
-        
-    JLabel LabelU1;
-    JLabel LabelU2;
-    JLabel LabelU3;
-    JLabel LabelU4;
-    JLabel LabelU5;
-    JLabel LabelU6;
-    JLabel LabelU7;
-        
-    JLabel LabelF1;
-    JLabel LabelF2;
-    JLabel LabelF3;
-    JLabel LabelF4;
-    JLabel LabelF5;
-    JLabel LabelF6;
-    JLabel LabelF7;
-    JLabel LabelF8;
+    final int LABEL_SPACES_NUM=10;
+    final int LABEL_T_NUM=4;
+    final int LABEL_U_NUM=7;
+    final int LABEL_F_NUM=8;
 
     JLabel LabelTotal;
-        
-    JTextField InputField1;    
+
+    JTextField InputField1;
     JTextField InputField2;
     JTextField InputField3;
     JTextField InputField4;
     JTextField InputField5;
     JTextField InputField6;
-        
+
     JLabel Label1;
     JLabel Label2;
     JLabel Label3;
@@ -59,62 +31,45 @@ public class GUI
     JLabel Label10;
     JLabel Label11;
     JLabel Label12;
-        
+
     JButton calculate;
-    
+
     GUI()
         {
-            windowContent= new JPanel();    
- 
-            // Задаём менеджер отображения для этой панели 
- 
-            GridLayout gl = new GridLayout(6,8);  
-            windowContent.setLayout(gl);
-            
-            // Создаём кнопки
-            LabelSpace1 = new JLabel(" ");
-            LabelSpace2 = new JLabel(" ");
-            LabelSpace3 = new JLabel(" ");
-            LabelSpace4 = new JLabel(" ");
-            LabelSpace5 = new JLabel(" ");
-            LabelSpace6 = new JLabel(" ");
-            LabelSpace7 = new JLabel(" ");
-            LabelSpace8 = new JLabel(" ");
-            LabelSpace9 = new JLabel(" ");
-            LabelSpace10 = new JLabel(" ");
-       
-        
-            LabelT1 = new JLabel("T%");
-            LabelT2 = new JLabel("T%");
-            LabelT3 = new JLabel("T%");
-            LabelT4 = new JLabel("T%");
-            
-            LabelU1 = new JLabel("U%");
-            LabelU2 = new JLabel("U%");
-            LabelU3 = new JLabel("U%");
-            LabelU4 = new JLabel("U%");
-            LabelU5 = new JLabel("U%");
-            LabelU6 = new JLabel("U%");
-            LabelU7 = new JLabel("U%");
-        
-            LabelF1 = new JLabel("F%");
-            LabelF2 = new JLabel("F%");
-            LabelF3 = new JLabel("F%");
-            LabelF4 = new JLabel("F%");
-            LabelF5 = new JLabel("F%");
-            LabelF6 = new JLabel("F%");
-            LabelF7 = new JLabel("F%");
-            LabelF8 = new JLabel("F%");
+            windowContent= new JPanel();
 
-            LabelTotal = new JLabel("Total:");
-        
-            InputField1 = new JTextField(3);    
-            InputField2 = new JTextField(3);
-            InputField3 = new JTextField(3);
-            InputField4 = new JTextField(3);
-            InputField5 = new JTextField(3);
-            InputField6 = new JTextField(3);
-        
+            // Задаём менеджер отображения для этой панели
+
+            GridLayout gl = new GridLayout(6,8);
+            windowContent.setLayout(gl);
+
+            // Создаём лейблы
+            //пробелов
+            JLabel[] LabelSpaces = new JLabel[LABEL_SPACES_NUM];
+            for (int i=0;i<LABEL_SPACES_NUM;i++) {
+                LabelSpaces[i]=new JLabel(" ");
+            }
+
+            //истины
+            JLabel[] LabelTs = new JLabel[LABEL_T_NUM];
+            for (int i=0;i<LABEL_T_NUM;i++) {
+                LabelTs[i]=new JLabel("T%");
+            }
+
+            //неизвестности
+            JLabel[] LabelUs = new JLabel[LABEL_U_NUM];
+            for (int i=0;i<LABEL_U_NUM;i++) {
+                LabelUs[i]=new JLabel("U%");
+//                System.out.println("i["+i+"]="+LabelUs[i].getText());
+            }
+
+            //лжи
+            JLabel[] LabelFs = new JLabel[LABEL_F_NUM];
+            for (int i=0;i<LABEL_F_NUM;i++) {
+                LabelFs[i]=new JLabel("F%");
+            }
+
+
             Label1 = new JLabel(" ");
             Label2 = new JLabel(" ");
             Label3 = new JLabel(" ");
@@ -128,64 +83,73 @@ public class GUI
             Label11 = new JLabel(" ");
             Label12 = new JLabel(" ");
 
+            LabelTotal = new JLabel("Total:");
+
+            InputField1 = new JTextField(3);
+            InputField2 = new JTextField(3);
+            InputField3 = new JTextField(3);
+            InputField4 = new JTextField(3);
+            InputField5 = new JTextField(3);
+            InputField6 = new JTextField(3);
+
             calculate = new JButton("AND");
-            
- 
-            // Добавляем компоненты на панель 
+
+
+            // Добавляем компоненты на панель
             //1
-            windowContent.add(LabelSpace1);//+
-            windowContent.add(LabelSpace2);//+ 
-            windowContent.add(LabelSpace3);//+
-            windowContent.add(LabelT1);//+
-            windowContent.add(LabelSpace4);//+
-            windowContent.add(LabelU1);//+
-            windowContent.add(LabelSpace5);//+
-            windowContent.add(LabelF1);//+
-      
+            windowContent.add(LabelSpaces[0]);
+            windowContent.add(LabelSpaces[1]);
+            windowContent.add(LabelSpaces[2]);
+            windowContent.add(LabelTs[0]);
+            windowContent.add(LabelSpaces[3]);
+            windowContent.add(LabelUs[0]);
+            windowContent.add(LabelSpaces[4]);
+            windowContent.add(LabelFs[0]);
+
             //2
-            windowContent.add(LabelSpace6);//+
+            windowContent.add(LabelSpaces[5]);
             windowContent.add(calculate);//+
-            windowContent.add(LabelSpace7);//+
+            windowContent.add(LabelSpaces[6]);
             windowContent.add(InputField1);//+
-            windowContent.add(LabelSpace8);//+
+            windowContent.add(LabelSpaces[7]);
             windowContent.add(InputField2);//+
-            windowContent.add(LabelSpace9);//+
+            windowContent.add(LabelSpaces[8]);
             windowContent.add(InputField3);//+
             //3
-            windowContent.add(LabelT2);//+
+            windowContent.add(LabelTs[1]);
             windowContent.add(InputField4);//+
-            windowContent.add(LabelT3);//+
+            windowContent.add(LabelTs[2]);
             windowContent.add(Label1);//+
-            windowContent.add(LabelU2);//+
+            windowContent.add(LabelUs[1]);
             windowContent.add(Label2);//+
-            windowContent.add(LabelF2);//+
+            windowContent.add(LabelFs[1]);
             windowContent.add(Label3);//+
             //4
-            windowContent.add(LabelU3);//+
+            windowContent.add(LabelUs[2]);
             windowContent.add(InputField5);//+
-            windowContent.add(LabelU4);//+
+            windowContent.add(LabelUs[3]);
             windowContent.add(Label4);//+
-            windowContent.add(LabelU5);//+
+            windowContent.add(LabelUs[4]);
             windowContent.add(Label5);//+
-            windowContent.add(LabelF3);//+
+            windowContent.add(LabelFs[2]);
             windowContent.add(Label6);//+
             //5
-            windowContent.add(LabelF4);//+
+            windowContent.add(LabelFs[3]);
             windowContent.add(InputField6);//+
-            windowContent.add(LabelF5);//+
+            windowContent.add(LabelFs[4]);//+
             windowContent.add(Label7);//+
-            windowContent.add(LabelF6);//+
+            windowContent.add(LabelFs[5]);//+
             windowContent.add(Label8);//+
-            windowContent.add(LabelF7);//+
+            windowContent.add(LabelFs[6]);//+
             windowContent.add(Label9);//+
             //6
-            windowContent.add(LabelSpace10);//+
+            windowContent.add(LabelSpaces[9]);
             windowContent.add(LabelTotal);//+
-            windowContent.add(LabelT4);//+
+            windowContent.add(LabelTs[3]);
             windowContent.add(Label10);//+
-            windowContent.add(LabelU7);//+
+            windowContent.add(LabelUs[6]);//+
             windowContent.add(Label11);//+
-            windowContent.add(LabelF8);//+
+            windowContent.add(LabelFs[7]);//+
             windowContent.add(Label12);//+
   
     //регистрация слушателя
